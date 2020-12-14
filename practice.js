@@ -69,8 +69,46 @@ function is_palindrome(s) {
         return false;
 }
 
+function hasMatchingParentheses(exp){
+    const checkStack = new Stack;
+    for(let i = 0; i<exp.length; i++){
+        checkStack.push(exp[i])
+    }
+    let currNode = checkStack.top;
+    let openingCount = 0;
+    let closingCount = 0;
+    for(let i = 0; currNode !== null; i++){
+        if (currNode.data === '('){
+            openingCount++;
+        }
+        if(currNode.data === ')'){
+            closingCount++;
+        }
+        currNode = currNode.next;
+    }
+    if(openingCount === closingCount){
+        return true;
+    }
+    else{
+        if(openingCount > closingCount){
+            if(openingCount - closingCount === 1){
+                return `You are missing a ")"`
+            }
+            return `You are missing ${openingCount - closingCount} instances of ")"`
+        }
+        if(closingCount > openingCount){
+            if(closingCount - openingCount === 1){
+                return `You are missing a "("`
+            }
+            return `You are missing ${closingCount - openingCount} instances of "("`
+        }
+    }
+    return `Opening count: ${openingCount}, Closing count: ${closingCount}`
+}
 
-    
+
+console.log(hasMatchingParentheses('function))))(exp){ content }'));
+ //   node .\practice.js   
 const starTrek = new Stack;
 
 starTrek.push('Kirk');
