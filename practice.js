@@ -18,9 +18,42 @@ class Stack{
         this.top = node;
     }
     pop(){
-        node = this.top;
-        this.top = this.top.next;
+        let node = this.top;
+        this.top = node.next;
         return node.data;
     }
 }
+
+//Stack helper functions
+function peek(stack){
+    return stack.top;
+}
+function isEmpty(stack){
+    if(stack.top === null){
+        return true;
+    }
+    return false;
+}
+function display(stack){
+    let stackContainer = '';
+    let currNode = stack.top;
+
+    if(stack.top === null){
+        return 'Stack is empty'
+    }
+    while(currNode !== null){
+        stackContainer += currNode.data + '\n'
+        currNode = currNode.next
+    }
+    return stackContainer;
+}
     
+const starTrek = new Stack;
+
+starTrek.push('Kirk');
+starTrek.push('Spock');
+//starTrek.push('McCoy');
+starTrek.push('Scotty');
+
+
+console.log(display(starTrek));
