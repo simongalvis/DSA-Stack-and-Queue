@@ -17,4 +17,10 @@ class Stack{
         const node = new _Node(data, this.top);
         this.top = node;
     }
+    pop(){
+        node = this.top;
+        this.top = this.top.next;
+        return node.data;
+    }
 }
+    
