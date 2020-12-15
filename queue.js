@@ -58,7 +58,56 @@ function display(q){
     }
     return displayQueue;
 }
-const starTrekQ = new Queue;
+// Doubly Linked list Queue
+
+class _DoubleNode{
+    constructor(value){
+        this.value = value;
+        this.prev = null;
+        this.next = null
+    }
+}
+class DoubleQueue{
+    constructor(){
+        this.head = null;
+        this.tail = null;
+    }
+    enqueue(data){
+        const node = new _DoubleNode(data);
+        if(this.head === null){
+            this.head = node;
+        }
+        if(this.last){
+            this.tail.next = node;
+            node.prev = this.tail;
+        }
+        this.tail = node;
+
+    }
+    dequeue(){
+        if(this.head === null){
+            return;
+        }
+        this.head.preious = null;
+
+        const node = this.head
+        this.head = this.head.next;
+
+        if(node === this.tail){
+            this.tail = null;
+        }
+        return node.value;
+    }
+}
+//kirk is first on the queue
+
+
+
+
+
+
+
+const starTrekQ = new DoubleQueue;
 
 starTrekQ.enqueue('Kirk');
 //starTrekQ.enqueue('Spock');

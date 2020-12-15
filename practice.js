@@ -106,7 +106,7 @@ function hasMatchingParentheses(exp){
     return `Opening count: ${openingCount}, Closing count: ${closingCount}`
 }
 // Keep working on this one 
-function sort(stack){
+/* function sort(stack){
     let currNode = stack.top;
     let max = null;
 
@@ -122,7 +122,7 @@ function sort(stack){
 
     }
 
-}
+} */
 
    //  console.log(display(sort()))
 
@@ -139,8 +139,6 @@ starTrek.top = 'Kirk';
 
 console.log(display(starTrek));
 
-
-//Queues
 
 
 
