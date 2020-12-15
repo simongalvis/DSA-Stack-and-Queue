@@ -105,9 +105,28 @@ function hasMatchingParentheses(exp){
     }
     return `Opening count: ${openingCount}, Closing count: ${closingCount}`
 }
+// Keep working on this one 
+function sort(stack){
+    let currNode = stack.top;
+    let max = null;
 
+    if (currNode === null){
+        return `No items to sort: stack is empty`
+    }
+    while(currNode !== null){
+        
+        if(currNode.data > max ){
+            max = currNode.data;
+            currNode = currNode.next;
+        }
 
-console.log(hasMatchingParentheses('function))))(exp){ content }'));
+    }
+
+}
+
+   //  console.log(display(sort()))
+
+//console.log(hasMatchingParentheses('function))))(exp){ content }'));
  //   node .\practice.js   
 const starTrek = new Stack;
 
@@ -115,6 +134,13 @@ starTrek.push('Kirk');
 starTrek.push('Spock');
 //starTrek.push('McCoy');
 starTrek.push('Scotty');
+starTrek.top = 'Kirk';
 
 
-//console.log(display(starTrek));
+console.log(display(starTrek));
+
+
+//Queues
+
+
+
